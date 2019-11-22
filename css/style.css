@@ -1,0 +1,518 @@
+* {
+	
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+
+	overflow-x: hidden;
+}
+
+section {
+
+	padding-top: 150px;
+	
+}
+
+:root {
+
+	--azul: #2E5264;
+	--gris: #8591B0;
+	--verde: #7ed321;
+}
+ 
+a {
+
+	text-decoration: none;
+}
+
+/*--fuentes--*/
+
+h2, h3, p {
+
+	font-family: 'Fira Sans', sans-serif;
+}
+
+h2, h3 {
+
+	color: var(--azul);
+
+}
+
+p {
+
+	color: var(--gris);
+}
+
+h2 {
+
+	font-weight: 600;
+	font-size: 4rem;
+	
+}
+
+h3 {
+
+	text-transform: uppercase;
+	font-size: 1.8rem;
+
+}
+
+.cabecera p {
+
+	font-size: 1.3rem;
+	font-weight: 300;
+	line-height: 1.8rem;
+	
+}
+
+
+.cabecera .precio {
+
+	margin-top: 2rem;
+	
+}
+
+.cabecera .precio:hover {
+
+	cursor: pointer;
+}
+
+.cabecera .precio  p {
+
+	color: white;
+	font-weight: 700;
+	
+}
+
+.centrar {
+
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+	justify-content: center;
+}
+
+.columna {
+
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	align-content: stretch;
+	justify-content: center;
+
+}
+
+.tarifasContenedor {
+
+	margin: 3rem;
+
+}
+
+.tarifa {
+
+	margin: 3rem;
+
+}
+
+.tarifa header {
+
+	
+	padding-bottom: 2rem;
+}
+
+.tarifa ul {
+
+	padding-top: 4rem;
+	margin-bottom: 4rem;
+} 
+
+.tarifa ul li {
+
+	list-style: none;
+
+}
+
+.tarifa ul li p {
+
+	line-height: 2.8rem;
+}
+
+.tarifa ul li p::before {
+
+	content: url('../img/iconos/tic.png');
+	padding-right: 5px;
+}
+
+.contornoFinal {
+
+	background-image: url('../img/estructural/abstractoVerde.png');
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 30vh;
+	
+}
+
+/*---svg-----*/
+
+svg {
+
+	fill: none;
+	stroke: var(--verde);
+	stroke-width: 3;
+	stroke-dasharray: 170;
+	width: 5rem;
+
+}
+
+svg.animar {
+
+	animation: animate 1.5s ease-in;
+	-webkit-animation: animate 1.5s ease-in;
+	-moz-animation: animate 1.5s ease-in;
+	-ms-animation: animate 1.5s ease-in;
+	-o-animation: animate 1.5s ease-in;
+
+}
+
+#svg-free {
+	
+	width: 3.3rem;
+}
+
+
+@keyframes animate {
+
+0% {
+
+		opacity: .5;
+		stroke-dashoffset: 150;
+	}
+
+	30% {
+
+		opacity: .9;
+		stroke-dashoffset: 110;
+	}
+
+
+	60% {
+		
+		stroke-dashoffset: 80;
+	}
+
+	80% {
+
+		
+		stroke-dashoffset: 40;
+	}
+
+	100% {
+
+		stroke-dashoffset: 0;
+	}
+}
+
+.precio {
+
+	background-color: var(--azul);
+	font-size: 1.4rem;
+	border-radius: 30px;
+	color: white;
+	width: 200px;
+	padding: .7rem;
+	text-align: center;
+
+}
+
+.precio.color {
+
+	background-color: var(--verde);
+}
+
+#boton {
+
+	
+	margin-top: 5rem;
+
+}
+
+#boton p {
+
+	padding-bottom: 1rem;
+}
+
+/*-----switch----*/
+
+ 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 34px;
+}
+
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: var(--verde);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--verde);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(84px);
+  -ms-transform: translateX(84px);
+	-moz-transform: translateX(84px);
+	-o-transform: translateX(84px);
+  	transform: translateX(84px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+} 
+
+.slider:after
+{
+ content:'mensual';
+ color: white;
+ display: block;
+ position: absolute;
+ transform: translate(-50%,-50%);
+ -webkit-transform: translate(-50%,-50%);;
+ -ms-transform: translate(-50%,-50%);
+-moz-transform: translate(-50%,-50%);
+-o-transform: translate(-50%,-50%);
+
+ top: 50%;
+ left: 50%;
+ font-size: .8rem;
+ font-family: Verdana, sans-serif;
+}
+
+input:checked + .slider:after
+{  
+  content:'anual';
+}
+
+/*----responsive---*/
+
+@media screen and (max-width: 1870px) {
+
+	#desplazarResponsive{
+
+		padding-left: 2rem;
+	}
+
+	h2 {
+
+		font-size: 3rem;
+	}
+
+	.tarifa h3 {
+
+		font-size: 1.7rem;
+	}
+
+	.precio {
+
+		width: 170px;
+		font-size: 1rem;
+
+	}
+
+	.cabecera img {
+
+		width: 80%;
+		padding-left: 2rem;
+	}
+
+	#boton {
+
+		margin-top: 150px;
+	}
+
+	.tarifa {
+
+	margin: 1.5rem;
+
+	}
+
+	.tarifasContenedor {
+
+	margin: 7rem 1rem;
+
+	}
+
+	.tarifa ul li p {
+
+		font-size: .8rem;
+
+	}
+
+	svg {
+
+		width: 4rem;
+	}
+
+	#svg-free {
+
+		height: 4rem;
+	}
+
+
+}
+
+ 
+@media screen and (max-width: 1200px) {
+
+	.centrar {
+
+		flex-flow: row wrap;
+
+	}
+
+	.precio {
+
+		width: 180px;
+
+	}
+
+	.precio p {
+
+		font-size: 1.5rem;
+	}
+
+	.tarifa {
+
+		padding-top: 5rem;
+	}
+
+
+}
+
+@media screen and (max-width: 992px) {
+
+	.cabecera {
+
+		display: flex;
+		flex-direction: column-reverse;
+		align-content: center;
+		justify-content: center;
+		padding-left: 1rem;
+		text-align: center;
+
+	}
+
+		.precio.color {
+
+		display: block;
+		margin: 2rem auto;
+	}
+
+		h2 {
+
+		font-size: 4rem;
+		padding-right: 0px;
+		padding-bottom: 3rem;
+	}
+
+		.cabecera img {
+
+		width: 80%;
+		padding-bottom: 5rem;
+	}
+
+	.contornoFinal {
+
+	background-image: url('../img/estructural/abstractoVerdeMediano.png');
+
+	}
+
+}
+
+@media screen and (max-width: 800px) {
+
+
+	h2 {
+
+		font-size: 3rem;
+	}
+
+}
+
+@media screen and (max-width: 576px) {
+
+	.cabecera p {
+
+		font-size: 1rem;
+	}
+
+	#desplazarResponsive {
+
+    padding-left: 0rem;
+	}
+
+	.cabecera img {
+
+		padding-left: 0rem;
+	}
+
+	.tarifa {
+
+		margin: 1rem;
+	}
+
+	.tarifa ul li p {
+
+		font-size: .9rem;
+
+	}
+
+	.contornoFinal {
+
+	background-image: url('../img/estructural/abstractoVerdePeque.png');
+
+	}
+
+}
+
